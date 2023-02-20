@@ -13,62 +13,113 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Script\GameObject.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Vector2.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Ball.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Player.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Character.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Bar.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Blocks.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Script\GameObject.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\Vector2.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\Utility.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\Character.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\Player.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\Ball.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\Bar.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\Blocks.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
+    <Filter Include="ヘッダー ファイル\GameMath">
+      <UniqueIdentifier>{1c58da04-f391-47d3-9cdc-5055f02e41c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\BlockBreaker">
+      <UniqueIdentifier>{a47623d5-bf01-4dac-b943-55a6db580630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Utility">
+      <UniqueIdentifier>{0b5a9025-1a46-4e25-a1aa-5993b196badf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameMath">
+      <UniqueIdentifier>{2e9f2be4-e1c4-4cf4-8078-03f389ab23f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\BlockBreaker">
+      <UniqueIdentifier>{694ec342-2693-4702-926f-3a747b967917}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Image\Blocks.png">
       <Filter>リソース ファイル</Filter>
     </Image>
+    <Image Include="Image\Bar.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Image\Ball.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Script\BlockBreaker\Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\GameMath\Vector2.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\Ball.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\Bar.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\Blocks.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\GameObject.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\Player.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\GameMath\Collision.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\GameMath\Circle.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\GameMath\LineSegment2D.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\GameMath\Calculus.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\Character.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\InputManager.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Script\GameMath\Vector2.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\Ball.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\Bar.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\Blocks.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\GameObject.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\Player.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\Utility\Utility.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\GameMath\Collision.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\GameMath\Circle.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\GameMath\LineSegment2D.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\GameMath\Calculus.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\Character.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\InputManager.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
