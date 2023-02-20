@@ -10,6 +10,9 @@ protected:	// メンバー変数
 public:		// コンストラクタ
 	Character(const Vector2& pos, const Vector2 size);
 
+public:		// Accessor
+	Vector2 GetGraphSize() const { return graphSize; }
+
 public:
 	virtual void Update() { cout << "Character::Update()" << endl; };	// 状態更新
 	virtual void Draw() { cout << "Character::Draw()" << endl; };		// 描画

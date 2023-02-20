@@ -16,6 +16,9 @@ protected:	// メンバ変数
 public:		// コンストラクタ・デストラクタ
 	GameObject(const Vector2& pos);
 
+public:		// Accessor
+	Vector2 GetPosition() const { return position; }
+
 public:		// インターフェース
 	virtual void Update() = 0;		// 状態更新
 	virtual void Draw() = 0;		// 描画

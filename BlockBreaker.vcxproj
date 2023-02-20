@@ -168,6 +168,7 @@
     <ClCompile Include="Script\BlockBreaker\InputManager.cpp" />
     <ClCompile Include="Script\BlockBreaker\Main.cpp" />
     <ClCompile Include="Script\BlockBreaker\Player.cpp" />
+    <ClCompile Include="Script\BlockBreaker\Start.cpp" />
     <ClCompile Include="Script\GameMath\Calculus.cpp" />
     <ClCompile Include="Script\GameMath\Circle.cpp" />
     <ClCompile Include="Script\GameMath\Collision.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Script\BlockBreaker\GameObject.h" />
     <ClInclude Include="Script\BlockBreaker\InputManager.h" />
     <ClInclude Include="Script\BlockBreaker\Player.h" />
+    <ClInclude Include="Script\BlockBreaker\Start.h" />
     <ClInclude Include="Script\GameMath\Calculus.h" />
     <ClInclude Include="Script\GameMath\Circle.h" />
     <ClInclude Include="Script\GameMath\Collision.h" />

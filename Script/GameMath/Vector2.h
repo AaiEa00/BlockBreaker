@@ -20,8 +20,10 @@ namespace GameMath {
 		Vector2(float xx, float yy);
 
 	public:		// Accessor
-		float GetX(){return x;}
-		float GetY(){return y;}
+		float GetX() const {return x;}
+		float GetY() const {return y;}
+		void SetX(float xx) { x = xx; }
+		void SetY(float yy) { y = yy; }
 
 	public:		// 演算子オーバーロード
 		// 二項演算子

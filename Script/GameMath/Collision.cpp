@@ -1,6 +1,32 @@
 #include "Collision.h"
 
 /// <summary>
+/// 壁とオブジェクトの衝突検知
+/// </summary>
+/// <param name="pos">座標</param>
+/// <param name="size">画像サイズ</param>
+/// <returns>衝突しているか</returns>
+int GameMath::Collision::ExistInsideScreen
+(
+	Vector2& pos,
+	const Vector2& size
+)
+{
+	// X軸方向の衝突
+	if (pos.GetX() < 0.0f)
+		return leftSideOfScreen;
+	if (screenSizeWidth < pos.GetX() + size.GetX())
+		return rightSideOfScreen;
+	// Y軸方向の衝突
+	if (pos.GetY() < 0.0f)
+		return topOfScreen;
+	if (screenSizeHeight < pos.GetY() + size.GetY())
+		return bottomOfScreen;
+
+	return 0;
+}
+
+/// <summary>
 /// 円と2D線分の衝突判定
 /// </summary>
 /// <param name="cir">円</param>

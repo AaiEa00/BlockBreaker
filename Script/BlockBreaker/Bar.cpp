@@ -5,7 +5,7 @@
 /// </summary>
 Bar::Bar
 (
-	const Vector2& pos, 
+	Vector2& pos, 
 	const Vector2& size,
 	const std::string_view fileName,
 	const float& spd
@@ -19,13 +19,18 @@ Bar::Bar
 /// </summary>
 void Bar::Update()
 {
+	Vector2 pos = position;
 	if (GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_RIGHT)
 	{
-		position = Vector2::AddX(position, speed);
+		pos = Vector2::AddX(position, speed);
+		if (!Collision::ExistInsideScreen(pos, graphSize))
+			position = pos;
 	}
 	if (GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_LEFT)
 	{
-		position = Vector2::AddX(position, -speed);
+		pos = Vector2::AddX(position, -speed);
+		if (!Collision::ExistInsideScreen(pos, graphSize))
+			position = pos;
 	}
 }
 

@@ -21,7 +21,7 @@ private:	// メンバ変数
 
 public:		// コンストラクタ
 	Bar(
-		const Vector2& pos,
+		Vector2& pos,
 		const Vector2& size,
 		const std::string_view fileName,
 		const float& spd

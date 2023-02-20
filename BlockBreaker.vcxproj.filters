@@ -80,6 +80,9 @@
     <ClCompile Include="Script\BlockBreaker\InputManager.cpp">
       <Filter>ソース ファイル\BlockBreaker</Filter>
     </ClCompile>
+    <ClCompile Include="Script\BlockBreaker\Start.cpp">
+      <Filter>ソース ファイル\BlockBreaker</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Script\GameMath\Vector2.h">
@@ -119,6 +122,9 @@
       <Filter>ヘッダー ファイル\BlockBreaker</Filter>
     </ClInclude>
     <ClInclude Include="Script\BlockBreaker\InputManager.h">
+      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\BlockBreaker\Start.h">
       <Filter>ヘッダー ファイル\BlockBreaker</Filter>
     </ClInclude>
   </ItemGroup>
