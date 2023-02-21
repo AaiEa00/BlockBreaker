@@ -28,6 +28,12 @@
     <Filter Include="ソース ファイル\BlockBreaker">
       <UniqueIdentifier>{694ec342-2693-4702-926f-3a747b967917}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{4dc51ae8-476b-49ed-8d36-47406ffdc087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{71426617-b01c-48cd-b578-df20699d104d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Image\Blocks.png">
@@ -83,6 +89,9 @@
     <ClCompile Include="Script\BlockBreaker\Start.cpp">
       <Filter>ソース ファイル\BlockBreaker</Filter>
     </ClCompile>
+    <ClCompile Include="Script\Scene\Scene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Script\GameMath\Vector2.h">
@@ -126,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="Script\BlockBreaker\Start.h">
       <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\Scene\Scene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

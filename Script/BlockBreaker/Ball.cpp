@@ -17,24 +17,24 @@ Ball::Ball
 /// <summary>
 /// 状態更新
 /// </summary>
-void Ball::Update(Bar barSeg)
+void Ball::Update()
 {
 	// 移動後の座標
 	Vector2 pos = position + speed;
 	// 線分と円の当たり判定用
-	Vector2 end{
-		barSeg.GetPosition().GetX() + barSeg.GetGraphSize().GetX(), 
-		pos.GetY() };
-	Vector2 start{ barSeg.GetPosition().GetX(), barSeg.GetPosition().GetY() };
-	LineSegment2D seg{ start, end };
+	//Vector2 end{
+		//barSeg.GetPosition().GetX() + barSeg.GetGraphSize().GetX(), 
+		//pos.GetY() };
+	//Vector2 start{ barSeg.GetPosition().GetX(), barSeg.GetPosition().GetY() };
+	//LineSegment2D seg{ start, end };
 
 	// ボールとバーが当たっていたら
-	if (Collision::AreCollided(circle, seg))
+	//if (Collision::AreCollided(circle, seg))
 	{
-		printf("AreCollided");
+		//printf("AreCollided");
 		// Y軸方向の移動速度を反転
-		speed.SetY(-speed.GetY());
-		return;
+		//speed.SetY(-speed.GetY());
+		//return;
 	}
 
 	// 壁と衝突していたらオブジェクトを画面内に収めて

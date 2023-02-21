@@ -24,6 +24,6 @@ public:		// コンストラクタ
 	);
 
 public:
-	void Update(Bar barSeg);
+	void Update();
 	void Draw();
 };
