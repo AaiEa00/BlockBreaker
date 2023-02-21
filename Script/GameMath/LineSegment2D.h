@@ -1,5 +1,5 @@
 #pragma once
-#include "Vector2.h"
+#include "Shape.h"
 
 namespace GameMath
 {
@@ -7,6 +7,7 @@ namespace GameMath
 	/// 2D線分
 	/// </summary>
 	class LineSegment2D
+		:public Shape 
 	{
 	private:	// メンバー変数
 		Vector2 start{ 0.0f, 0.0f };		// 始点
@@ -28,5 +29,8 @@ namespace GameMath
 		void SetStart(Vector2& v) { start = v; }
 		void SetEnd(Vector2& v) { end = v; }
 		void SetDirection(Vector2& v) { direction = v; }
+
+	public:
+		bool CheckCollision() { return true; };
 	};
 }

@@ -17,7 +17,7 @@ Ball::Ball
 /// <summary>
 /// ó‘ÔXV
 /// </summary>
-void Ball::Update()
+void Ball::Update(GameManager& gm)
 {
 	// ˆÚ“®Œã‚ÌÀ•W
 	Vector2 pos = position + speed;
@@ -54,8 +54,7 @@ void Ball::Update()
 		speed.SetY(-speed.GetY());
 		return;
 	case bottomOfScreen:
-		position.SetY(screenSizeHeight - graphSize.GetY());
-		speed.SetY(-speed.GetY());
+		position = pos;
 		return;
 	default:
 		break;

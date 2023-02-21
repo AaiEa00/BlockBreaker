@@ -24,6 +24,6 @@ public:		// コンストラクタ
 	);
 
 public:
-	void Update();
+	void Update(GameManager& gm);
 	void Draw();
 };

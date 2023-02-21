@@ -22,6 +22,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	if (DxLib_Init() == error)
 		return error;
 
+	SetWindowText("ブロック崩し");
+
 	// 裏画面に描画
 	SetDrawScreen(DX_SCREEN_BACK);
 
@@ -37,12 +39,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	scene.push_back(&gOBar);
 	scene.push_back(new Ball(pos.at(1), graphSize.at(1), ball, speed));
 
+	GameManager gm;
+
 	while (ProcessMessage() == normal && ClearDrawScreen() == normal)
 	{
 		// 全てのゲームオブジェクトの状態を更新
 		for (auto& objs : scene)
 		{
-			objs->Update();
+			objs->Update(gm);
 		}
 
 		// 全てのゲームオブジェクトを描画

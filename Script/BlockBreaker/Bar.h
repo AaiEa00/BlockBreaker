@@ -28,6 +28,6 @@ public:		// コンストラクタ
 	);
 
 public:		// インターフェース
-	void Update();		// 状態更新
+	void Update(GameManager& gm);		// 状態更新
 	void Draw();		// 描画
 };

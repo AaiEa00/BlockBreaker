@@ -28,12 +28,6 @@
     <Filter Include="ソース ファイル\BlockBreaker">
       <UniqueIdentifier>{694ec342-2693-4702-926f-3a747b967917}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Scene">
-      <UniqueIdentifier>{4dc51ae8-476b-49ed-8d36-47406ffdc087}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Scene">
-      <UniqueIdentifier>{71426617-b01c-48cd-b578-df20699d104d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Image\Blocks.png">
@@ -77,20 +71,11 @@
     <ClCompile Include="Script\GameMath\LineSegment2D.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
-    <ClCompile Include="Script\GameMath\Calculus.cpp">
-      <Filter>ソース ファイル\GameMath</Filter>
-    </ClCompile>
     <ClCompile Include="Script\BlockBreaker\Character.cpp">
       <Filter>ソース ファイル\BlockBreaker</Filter>
     </ClCompile>
-    <ClCompile Include="Script\BlockBreaker\InputManager.cpp">
-      <Filter>ソース ファイル\BlockBreaker</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\BlockBreaker\Start.cpp">
-      <Filter>ソース ファイル\BlockBreaker</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\Scene\Scene.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
+    <ClCompile Include="Script\GameMath\Rectangle.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,20 +109,17 @@
     <ClInclude Include="Script\GameMath\LineSegment2D.h">
       <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
-    <ClInclude Include="Script\GameMath\Calculus.h">
-      <Filter>ヘッダー ファイル\GameMath</Filter>
-    </ClInclude>
     <ClInclude Include="Script\BlockBreaker\Character.h">
       <Filter>ヘッダー ファイル\BlockBreaker</Filter>
     </ClInclude>
-    <ClInclude Include="Script\BlockBreaker\InputManager.h">
-      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    <ClInclude Include="Script\Utility\GameManager.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Script\BlockBreaker\Start.h">
-      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
+    <ClInclude Include="Script\GameMath\Shape.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
-    <ClInclude Include="Script\Scene\Scene.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
+    <ClInclude Include="Script\GameMath\Rectangle.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

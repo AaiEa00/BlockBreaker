@@ -20,6 +20,6 @@ public:		// コンストラクタ
 	);
 
 public:		// インターフェース
-	virtual void Update() { cout << "Player::Update()" << endl; };	// 状態更新
-	virtual void Draw() { cout << "Player::Draw()" << endl; };		// 描画
+	virtual void Update(GameManager& gm) = 0;	// 状態更新
+	virtual void Draw() = 0;					// 描画
 };

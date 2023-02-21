@@ -17,7 +17,7 @@ Bar::Bar
 /// <summary>
 /// ó‘ÔXV
 /// </summary>
-void Bar::Update()
+void Bar::Update(GameManager& gm)
 {
 	Vector2 pos = position;
 	if (GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_RIGHT)

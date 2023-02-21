@@ -4,7 +4,7 @@
 /// デフォルトコンストラクタ
 /// </summary>
 Blocks::Blocks()
-	: handles{ 0,0,0,0 }, GameObject(Vector2::zero){}
+	: handles{ 0,0,0,0 }, Character(Vector2::zero, Vector2::zero){}
 
 /// <summary>
 /// コンストラクタ
@@ -12,8 +12,9 @@ Blocks::Blocks()
 Blocks::Blocks
 (
 	const Vector2& pos,
+	const Vector2& gSize,
 	const string_view& fileName
-):GameObject(pos)
+):Character(pos, gSize)
 {
 	LoadDivGraph
 	(
@@ -24,4 +25,24 @@ Blocks::Blocks
 		blocksSizeWidth,
 		blocksSizeHeight,
 		handles);
+}
+
+/// <summary>
+/// 状態更新
+/// </summary>
+/// <param name="gm"></param>
+void Blocks::Update(GameManager& gm)
+{
+
+}
+
+/// <summary>
+/// 描画
+/// </summary>
+void Blocks::Draw()
+{
+	for (int i = 0; i < blocksAllNum; i++)
+	{
+		DrawGraphF(position.GetX(), position.GetY(), handles[i], TRUE);
+	}
 }

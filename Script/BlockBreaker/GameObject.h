@@ -1,7 +1,7 @@
 #pragma once
-
 #include "DxLib.h"
 #include "Vector2.h"
+#include "GameManager.h"
 using namespace std;
 using namespace GameMath;
 
@@ -20,6 +20,6 @@ public:		// Accessor
 	Vector2 GetPosition() const { return position; }
 
 public:		// インターフェース
-	virtual void Update() = 0;		// 状態更新
+	virtual void Update(GameManager& gm) = 0;		// 状態更新
 	virtual void Draw() = 0;		// 描画
 };
