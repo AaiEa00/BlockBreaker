@@ -168,9 +168,9 @@
     <ClCompile Include="Script\BlockBreaker\Main.cpp" />
     <ClCompile Include="Script\BlockBreaker\Player.cpp" />
     <ClCompile Include="Script\GameMath\Circle.cpp" />
-    <ClCompile Include="Script\GameMath\Collision.cpp" />
+    <ClCompile Include="Script\GameMath\CollisionDetector.cpp" />
     <ClCompile Include="Script\GameMath\LineSegment2D.cpp" />
-    <ClCompile Include="Script\GameMath\Rectangle.cpp" />
+    <ClCompile Include="Script\GameMath\Box.cpp" />
     <ClCompile Include="Script\GameMath\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,9 +181,9 @@
     <ClInclude Include="Script\BlockBreaker\GameObject.h" />
     <ClInclude Include="Script\BlockBreaker\Player.h" />
     <ClInclude Include="Script\GameMath\Circle.h" />
-    <ClInclude Include="Script\GameMath\Collision.h" />
+    <ClInclude Include="Script\GameMath\CollisionDetector.h" />
     <ClInclude Include="Script\GameMath\LineSegment2D.h" />
-    <ClInclude Include="Script\GameMath\Rectangle.h" />
+    <ClInclude Include="Script\GameMath\Box.h" />
     <ClInclude Include="Script\GameMath\Shape.h" />
     <ClInclude Include="Script\GameMath\Vector2.h" />
     <ClInclude Include="Script\Utility\GameManager.h" />

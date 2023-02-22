@@ -6,6 +6,8 @@ namespace GameMath
 	class Circle
 		:public Shape
 	{
+		friend class CollisionDetector;
+
 	private:	// メンバー変数
 		Vector2 center{ 0.0f, 0.0f };	// 中心点
 		float radius = 0.0f;			// 半径
