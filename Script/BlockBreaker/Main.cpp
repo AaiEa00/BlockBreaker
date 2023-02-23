@@ -1,8 +1,8 @@
 #include "DxLib.h"
 #include "Utility.h"
-#include "Ball.h"
-#include "Bar.h"
-#include "Blocks.h"
+#include "Shape.h"
+#include "GameManager.h"
+#include "GameObject.h"
 #include <list>
 #include <vector>
 

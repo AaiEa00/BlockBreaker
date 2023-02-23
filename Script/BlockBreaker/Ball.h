@@ -2,7 +2,7 @@
 
 #include "Player.h"
 #include "Bar.h"
-#include "Collision.h"
+#include "CollisionDetector.h"
 
 constexpr string_view ball = "Image/Ball.png";
 constexpr int ballSize = 16;
