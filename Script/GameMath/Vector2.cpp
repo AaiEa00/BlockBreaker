@@ -60,6 +60,7 @@ Vector2 GameMath::Vector2::operator+(const Vector2& v)
 /// Œ¸ŽZ
 /// </summary>
 Vector2 GameMath::Vector2::operator-(const Vector2& v)
+const
 {
 	Vector2 result =
 	{

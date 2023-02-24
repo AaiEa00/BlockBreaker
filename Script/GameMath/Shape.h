@@ -13,11 +13,7 @@ namespace GameMath
 	{
 		friend class CollisionDetector;
 
-	protected:
-		Vector2 xy{ 0.0f, 0.0f };		// 要確認　メンバー変数どうする
-
 	public:
-		Shape(const float xx, const float yy) { xy.SetX(xx), xy.SetY(yy); }
-		Shape(const Vector2& xxyy) { xy.SetX(xxyy.GetX()), xy.SetY(xxyy.GetY()); }
+		Shape(){}
 	};
 }

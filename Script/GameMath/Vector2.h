@@ -31,7 +31,7 @@ namespace GameMath {
 		Vector2& operator+=(const Vector2& v);			// ‰ÁZ‘ã“ü
 		Vector2& operator-=(const Vector2& v);			// Œ¸Z‘ã“ü
 		Vector2 operator+(const Vector2& v);			// ‰ÁZ
-		Vector2 operator-(const Vector2& v);			// Œ¸Z
+		Vector2 operator-(const Vector2& v) const;			// Œ¸Z
 
 		friend Vector2 operator*(const float f, const Vector2& v);	// À””{
 		friend Vector2 operator*(const Vector2& v, const float f);	// À””{

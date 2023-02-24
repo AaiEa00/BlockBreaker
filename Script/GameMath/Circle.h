@@ -3,8 +3,7 @@
 
 namespace GameMath
 {
-	class Circle
-		:public Shape
+	class Circle : public Shape
 	{
 		friend class CollisionDetector;
 
@@ -18,8 +17,5 @@ namespace GameMath
 	public:		// Accessor
 		Vector2 GetCenter() const { return center; }
 		float GetRadius() const { return radius; }
-
-	public:
-		bool CheckCollision() { return true; };
 	};
 }
