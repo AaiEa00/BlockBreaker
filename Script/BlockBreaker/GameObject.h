@@ -4,7 +4,6 @@
 #include "GameManager.h"
 using namespace std;
 using namespace GameMath;
-
 /// <summary>
 /// Šî’êƒNƒ‰ƒX
 /// </summary>

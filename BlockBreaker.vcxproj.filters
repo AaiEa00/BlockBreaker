@@ -65,9 +65,6 @@
     <ClCompile Include="Script\GameMath\Circle.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
-    <ClCompile Include="Script\GameMath\LineSegment2D.cpp">
-      <Filter>ソース ファイル\GameMath</Filter>
-    </ClCompile>
     <ClCompile Include="Script\BlockBreaker\Character.cpp">
       <Filter>ソース ファイル\BlockBreaker</Filter>
     </ClCompile>
@@ -77,8 +74,8 @@
     <ClCompile Include="Script\GameMath\Box.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
-    <ClCompile Include="Script\GameMath\Shape.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Script\GameMath\Capsule.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,9 +103,6 @@
     <ClInclude Include="Script\GameMath\Circle.h">
       <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
-    <ClInclude Include="Script\GameMath\LineSegment2D.h">
-      <Filter>ヘッダー ファイル\GameMath</Filter>
-    </ClInclude>
     <ClInclude Include="Script\BlockBreaker\Character.h">
       <Filter>ヘッダー ファイル\BlockBreaker</Filter>
     </ClInclude>
@@ -122,6 +116,9 @@
       <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
     <ClInclude Include="Script\GameMath\Box.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\GameMath\Capsule.h">
       <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
   </ItemGroup>
