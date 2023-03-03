@@ -9,6 +9,8 @@ namespace GameMath {
 	/// </summary>
 	class Vector2
 	{
+		friend class Shape;
+
 	public:
 		static const Vector2 zero;		// ƒ[ƒƒxƒNƒgƒ‹
 
@@ -27,10 +29,10 @@ namespace GameMath {
 
 	public:		// ‰‰ZqƒI[ƒo[ƒ[ƒh
 		// “ñ€‰‰Zq
-		Vector2& operator=(const Vector2& v) throw();	// ‘ã“ü
-		Vector2& operator+=(const Vector2& v);			// ‰ÁZ‘ã“ü
-		Vector2& operator-=(const Vector2& v);			// Œ¸Z‘ã“ü
-		Vector2 operator+(const Vector2& v);			// ‰ÁZ
+		Vector2& operator=(const Vector2& v) throw();		// ‘ã“ü
+		Vector2& operator+=(const Vector2& v);				// ‰ÁZ‘ã“ü
+		Vector2& operator-=(const Vector2& v);				// Œ¸Z‘ã“ü
+		Vector2 operator+(const Vector2& v) const;			// ‰ÁZ
 		Vector2 operator-(const Vector2& v) const;			// Œ¸Z
 
 		friend Vector2 operator*(const float f, const Vector2& v);	// À””{
@@ -40,11 +42,11 @@ namespace GameMath {
 		static Vector2 AddX(const Vector2& v, float x);		// ‰ÁZ
 
 	public:		// ƒxƒNƒgƒ‹‰‰Z
-		float Magnitude();		// ‘å‚«‚³
-		Vector2 Normalize();		// ³‹K‰»
+		float Magnitude() const;		// ‘å‚«‚³
+		Vector2 Normalize() const;		// ³‹K‰»
 
-		float Dot(const Vector2& v);	// “àÏ
-		float Cross(const Vector2& v);	// ŠOÏ
+		static float Dot(const Vector2& v, const Vector2& u);		// “àÏ
+		static float Cross(const Vector2& v, const Vector2& u);		// ŠOÏ
 	};
 
 	// friendŠÖ”‚ÌéŒ¾

@@ -158,36 +158,42 @@
     <Image Include="Image\Ball.png" />
     <Image Include="Image\Bar.png" />
     <Image Include="Image\Blocks.png" />
+    <Image Include="Image\GreenBlock.png" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Script\BlockBreaker\Ball.cpp" />
     <ClCompile Include="Script\BlockBreaker\Bar.cpp" />
     <ClCompile Include="Script\BlockBreaker\Blocks.cpp" />
-    <ClCompile Include="Script\BlockBreaker\Character.cpp" />
     <ClCompile Include="Script\BlockBreaker\GameObject.cpp" />
-    <ClCompile Include="Script\BlockBreaker\Main.cpp" />
     <ClCompile Include="Script\BlockBreaker\Player.cpp" />
     <ClCompile Include="Script\GameMath\Capsule.cpp" />
     <ClCompile Include="Script\GameMath\Circle.cpp" />
     <ClCompile Include="Script\GameMath\CollisionDetector.cpp" />
     <ClCompile Include="Script\GameMath\Box.cpp" />
+    <ClCompile Include="Script\GameMath\LineSegment.cpp" />
+    <ClCompile Include="Script\GameMath\Shape.cpp" />
     <ClCompile Include="Script\GameMath\Vector2.cpp" />
+    <ClCompile Include="Script\Main.cpp" />
+    <ClCompile Include="Script\Utility\GameManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Script\BlockBreaker\Ball.h" />
     <ClInclude Include="Script\BlockBreaker\Bar.h" />
     <ClInclude Include="Script\BlockBreaker\Blocks.h" />
-    <ClInclude Include="Script\BlockBreaker\Character.h" />
     <ClInclude Include="Script\BlockBreaker\GameObject.h" />
     <ClInclude Include="Script\BlockBreaker\Player.h" />
     <ClInclude Include="Script\GameMath\Capsule.h" />
     <ClInclude Include="Script\GameMath\Circle.h" />
     <ClInclude Include="Script\GameMath\CollisionDetector.h" />
     <ClInclude Include="Script\GameMath\Box.h" />
+    <ClInclude Include="Script\GameMath\LineSegment.h" />
     <ClInclude Include="Script\GameMath\Shape.h" />
     <ClInclude Include="Script\GameMath\Vector2.h" />
     <ClInclude Include="Script\Utility\GameManager.h" />
     <ClInclude Include="Script\Utility\Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

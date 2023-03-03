@@ -1,14 +1,19 @@
 #pragma once
 #include "Shape.h"
 
-class Box :public Shape
+namespace GameMath
 {
-	friend class CollisionDetector;
+	class Box :public Shape
+	{
+		friend class CollisionDetector;
 
-private:
-	Vector2 leftTop{ 0.0f,0.0f };
-	Vector2 rightBottom{ 0.0f,0.0f };
+	private:
+		Vector2 leftTop{ 0.0f, 0.0f };			// 左上頂点
+		Vector2 rightBottom{ 0.0f, 0.0f };		// 右下頂点
 
-public:
-	Box(const Vector2& lt, const Vector2& rb);
-};
+	public:
+		// コンストラクタ
+		Box():leftTop(0.0f, 0.0f), rightBottom(0.0f, 0.0f){}
+		Box(const Vector2& pos, const Vector2& lt, const Vector2& rb);
+	};
+}

@@ -7,12 +7,15 @@
 #include <vector>
 
 #ifdef _DEBUG
-int main(void) 
+int main(int argc, char* argv[]) 
 {
 #else
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 #endif // _DEBUG
+
+	if (argc < 2)
+		return error;
 
 	// ウィンドウモード
 	ChangeWindowMode(TRUE);
@@ -28,18 +31,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	// シーンに登録するゲームオブジェクト
-	list<GameObject*> scene;
-	Vector2 speed{5.0f, 5.0f};
-	vector<Vector2> graphSize = { {barWidth, barHeight}, {ballSize, ballSize} };
-	vector<Vector2> pos = { 
-		{ screenSizeWidth / 2 - barWidth / 2, 400.0f } , 
-		{ 50.0f, 20.0f }
-	};
-	Bar gOBar{ pos.at(0), graphSize.at(0), bar, 10.0f };
-	scene.push_back(&gOBar);
-	scene.push_back(new Ball(pos.at(1), graphSize.at(1), ball, speed));
+	std::list<GameObject*> scene;
 
-	GameManager gm;
+	GameManager* gm = new BlockBreaker;
 
 	while (ProcessMessage() == normal && ClearDrawScreen() == normal)
 	{

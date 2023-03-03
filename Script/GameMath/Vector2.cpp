@@ -1,5 +1,4 @@
 #include "Vector2.h"
-using namespace std;
 using namespace GameMath;
 
 const Vector2 Vector2::zero{ 0.0f, 0.0f };		// ゼロベクトル
@@ -47,6 +46,7 @@ Vector2& GameMath::Vector2::operator-=(const Vector2& v)
 /// 加算
 /// </summary>
 Vector2 GameMath::Vector2::operator+(const Vector2& v)
+const
 {
 	Vector2 result = 
 	{
@@ -86,7 +86,7 @@ Vector2 GameMath::Vector2::AddX(const Vector2& v, float x)
 /// <summary>
 /// ベクトルのスカラー
 /// </summary>
-float GameMath::Vector2::Magnitude()
+float GameMath::Vector2::Magnitude() const
 {
 	return sqrt(x * x + y * y);
 }
@@ -94,7 +94,7 @@ float GameMath::Vector2::Magnitude()
 /// <summary>
 /// ベクトルの正規化
 /// </summary>
-Vector2 GameMath::Vector2::Normalize()
+Vector2 GameMath::Vector2::Normalize() const
 {
 	float mag = Magnitude();
 	Vector2 result =
@@ -108,17 +108,17 @@ Vector2 GameMath::Vector2::Normalize()
 /// <summary>
 /// 内積
 /// </summary>
-float GameMath::Vector2::Dot(const Vector2& v)
+float GameMath::Vector2::Dot(const Vector2& v, const Vector2& u)
 {
-	return x * v.x + y * v.y;
+	return v.x * u.x + v.y * u.y;
 }
 
 /// <summary>
 /// 外積
 /// </summary>
-float GameMath::Vector2::Cross(const Vector2& v)
+float GameMath::Vector2::Cross(const Vector2& v, const Vector2& u)
 {
-	return x * v.y - y * v.x;
+	return v.x * u.y - v.y * u.x;
 }
 
 /// <summary>

@@ -1,25 +1,39 @@
 #pragma once
 
-#include "Character.h"
+#include "GameObject.h"
 
 /// <summary>
 /// プレイヤー管理クラス
 /// </summary>
-class Player
-	:public Character
+class Player :public GameObject
 {
 protected:	// メンバ変数
-	int handle = 0;		// グラフィックハンドル
+	int handle = 0;	// グラフィックハンドル
 
 public:		// コンストラクタ
-	Player
-	(
-		const Vector2& pos,
-		const Vector2& size,
-		const string_view fileName
-	);
+	Player():handle(0){}
+	Player(const std::string_view fileName);
+	virtual ~Player();
 
 public:		// インターフェース
-	virtual void Update(GameManager& gm) = 0;	// 状態更新
+	virtual void Update(GameManager* gm) = 0;	// 状態更新
+
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider,
+		const Circle& circle
+	) = 0;
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider,
+		const Box& box
+	) = 0;
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider,
+		const LineSegment& lineSegment
+	) = 0;
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider,
+		const Capsule& capsule
+	) = 0;
+
 	virtual void Draw() = 0;					// 描画
 };

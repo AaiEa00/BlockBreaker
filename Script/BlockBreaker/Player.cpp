@@ -3,12 +3,13 @@
 /// <summary>
 /// コンストラクタ
 /// </summary>
-Player::Player
-(
-	const Vector2& pos, 
-	const Vector2& size,
-	const string_view fileName
-):Character(pos, size)
+Player::Player(const std::string_view fileName)
 {
-	handle = LoadGraph(string(fileName).c_str());
+	handle = LoadGraph(std::string(fileName).c_str());
+}
+
+Player::~Player()
+{
+	delete boundary;
+	boundary = nullptr;
 }

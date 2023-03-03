@@ -1,39 +1,24 @@
 #include "Blocks.h"
 
-/// <summary>
-/// デフォルトコンストラクタ
-/// </summary>
-Blocks::Blocks()
-	: handles{ 0,0,0,0 }, Character(Vector2::zero, Vector2::zero){}
-
-/// <summary>
-/// コンストラクタ
-/// </summary>
-Blocks::Blocks
-(
-	const Vector2& pos,
-	const Vector2& gSize,
-	const string_view& fileName
-):Character(pos, gSize)
+Blocks::~Blocks()
 {
-	LoadDivGraph
-	(
-		string(fileName).c_str(),
-		blocksAllNum,
-		blocksDivisionNum,
-		blocksDivisionNum,
-		blocksSizeWidth,
-		blocksSizeHeight,
-		handles);
+	delete boundary;
+	boundary = nullptr;
 }
 
 /// <summary>
 /// 状態更新
 /// </summary>
 /// <param name="gm"></param>
-void Blocks::Update(GameManager& gm)
+void Blocks::Update(GameManager* gm)
 {
+	if (gm->_isCollided(*static_cast<Box*>(boundary)))
+		delete this;
+}
 
+bool Blocks::_isCollided(const GameMath::CollisionDetector& collider, const Circle& circle)
+{
+	return collider.isCollided(circle , *static_cast<Box*>(boundary));
 }
 
 /// <summary>
@@ -41,8 +26,10 @@ void Blocks::Update(GameManager& gm)
 /// </summary>
 void Blocks::Draw()
 {
-	for (int i = 0; i < blocksAllNum; i++)
-	{
-		DrawGraphF(position.GetX(), position.GetY(), handles[i], TRUE);
-	}
+	DrawGraphF(
+		boundary->GetPosition().GetX(), 
+		boundary->GetPosition().GetY(), 
+		handle, 
+		TRUE
+	);
 }

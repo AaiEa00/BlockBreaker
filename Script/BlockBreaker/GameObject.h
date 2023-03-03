@@ -1,24 +1,39 @@
 #pragma once
-#include "DxLib.h"
-#include "Vector2.h"
 #include "GameManager.h"
-using namespace std;
-using namespace GameMath;
+#include "Shape.h"
+#include "CollisionDetector.h"
+#include "DxLib.h"
+
+class GameManager;
+class CollisionDetector;
+
 /// <summary>
 /// 基底クラス
 /// </summary>
 class GameObject
 {
 protected:	// メンバ変数
-	Vector2 position{0.0f, 0.0f};	// 座標
-
-public:		// コンストラクタ・デストラクタ
-	GameObject(const Vector2& pos);
-
-public:		// Accessor
-	Vector2 GetPosition() const { return position; }
+	Shape* boundary = nullptr;
 
 public:		// インターフェース
-	virtual void Update(GameManager& gm) = 0;		// 状態更新
-	virtual void Draw() = 0;		// 描画
+	virtual void Update(GameManager* gm) = 0;		// 状態更新
+	
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider, 
+		const Circle& circle
+	) = 0;
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider, 
+		const Box& box
+	) = 0;
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider, 
+		const LineSegment& lineSegment
+	) = 0;
+	virtual bool _isCollided(
+		const GameMath::CollisionDetector& collider, 
+		const Capsule& capsule
+	) = 0;
+
+	virtual void Draw() = 0;						// 描画
 };

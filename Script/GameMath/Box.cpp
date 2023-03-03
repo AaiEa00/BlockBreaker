@@ -5,7 +5,8 @@
 /// </summary>
 /// <param name="lt">ç∂è„</param>
 /// <param name="rb">âEâ∫</param>
-Box::Box(const Vector2& lt, const Vector2& rb)
+Box::Box(const Vector2& pos, const Vector2& lt, const Vector2& rb)
+	:Shape(pos)
 {
 	leftTop = lt;
 	rightBottom = rb;

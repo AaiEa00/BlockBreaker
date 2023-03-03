@@ -3,15 +3,22 @@
 /// <summary>
 /// コンストラクタ
 /// </summary>
-/// <param name="start">線分の始点ベクトル</param>
-/// <param name="end">線分の終点ベクトル</param>
+/// <param name="tp">カプセルの頂上</param>
+/// <param name="bs">カプセルの底</param>
 /// <param name="r">半径</param>
 GameMath::Capsule::Capsule(
-	const Vector2& start, 
-	const Vector2& end, 
+	const Vector2& pos,
+	const Vector2& tp, 
+	const Vector2& bs, 
 	const float r
-)
+):Shape(pos)
 {
-	direction = end - start;
+	tip = tp;
+	base = bs;
 	radius = r;
+
+	Vector2 capsuleNormal = (tip - base).Normalize();
+	Vector2 lineEndOffset = capsuleNormal * radius;
+	lineTip = tip - lineEndOffset;
+	lineBase = base + lineEndOffset;
 }

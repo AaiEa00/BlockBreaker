@@ -28,6 +28,9 @@
     <Filter Include="ソース ファイル\BlockBreaker">
       <UniqueIdentifier>{694ec342-2693-4702-926f-3a747b967917}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Utility">
+      <UniqueIdentifier>{24258090-3f1c-4dd3-bf76-eaa47ab401d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Image\Blocks.png">
@@ -39,11 +42,11 @@
     <Image Include="Image\Ball.png">
       <Filter>リソース ファイル</Filter>
     </Image>
+    <Image Include="Image\GreenBlock.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Script\BlockBreaker\Main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Script\GameMath\Vector2.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
@@ -65,9 +68,6 @@
     <ClCompile Include="Script\GameMath\Circle.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
-    <ClCompile Include="Script\BlockBreaker\Character.cpp">
-      <Filter>ソース ファイル\BlockBreaker</Filter>
-    </ClCompile>
     <ClCompile Include="Script\GameMath\CollisionDetector.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
@@ -75,6 +75,18 @@
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
     <ClCompile Include="Script\GameMath\Capsule.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\GameMath\LineSegment.cpp">
+      <Filter>ソース ファイル\GameMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\Utility\GameManager.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\GameMath\Shape.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
   </ItemGroup>
@@ -103,9 +115,6 @@
     <ClInclude Include="Script\GameMath\Circle.h">
       <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
-    <ClInclude Include="Script\BlockBreaker\Character.h">
-      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
-    </ClInclude>
     <ClInclude Include="Script\Utility\GameManager.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
     </ClInclude>
@@ -121,5 +130,13 @@
     <ClInclude Include="Script\GameMath\Capsule.h">
       <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
+    <ClInclude Include="Script\GameMath\LineSegment.h">
+      <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt">
+      <Filter>リソース ファイル</Filter>
+    </Text>
   </ItemGroup>
 </Project>

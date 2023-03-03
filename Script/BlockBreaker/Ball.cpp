@@ -3,71 +3,63 @@
 /// <summary>
 /// コンストラクタ
 /// </summary>
-Ball::Ball
-(
-	const Vector2& pos,
-	const Vector2& gSize,
-	const string_view fileName, 
-	const Vector2& spd
-):Player(pos, gSize, fileName)
+Ball::Ball(const std::string_view fileName, const Vector2& spd)
+	:Player(fileName)
 {
 	speed = spd;
+	boundary = new Circle;
+}
+
+Ball::~Ball()
+{
+	delete boundary;
+	boundary = nullptr;
 }
 
 /// <summary>
 /// 状態更新
 /// </summary>
-void Ball::Update(GameManager& gm)
+void Ball::Update(GameManager* gm)
 {
 	// 移動後の座標
-	Vector2 pos = position + speed;
-	// 線分と円の当たり判定用
-	//Vector2 end{
-		//barSeg.GetPosition().GetX() + barSeg.GetGraphSize().GetX(), 
-		//pos.GetY() };
-	//Vector2 start{ barSeg.GetPosition().GetX(), barSeg.GetPosition().GetY() };
-	//LineSegment2D seg{ start, end };
-
-	// ボールとバーが当たっていたら
-	//if (Collision::AreCollided(circle, seg))
-	{
-		//printf("AreCollided");
-		// Y軸方向の移動速度を反転
-		//speed.SetY(-speed.GetY());
-		//return;
-	}
-
-	// 壁と衝突していたらオブジェクトを画面内に収めて
-	// X, Y軸の速度を状況に応じて反転する
-	switch (Collision::ExistInsideScreen(pos, graphSize))
-	{
-	case leftSideOfScreen:
-		position.SetX(0.0f);
-		speed.SetX(-speed.GetX());
-		return;
-	case rightSideOfScreen:
-		position.SetX(screenSizeWidth - graphSize.GetX());
-		speed.SetX(-speed.GetX());
-		return;
-	case topOfScreen:
-		position.SetY(0.0f);
-		speed.SetY(-speed.GetY());
-		return;
-	case bottomOfScreen:
-		position = pos;
-		return;
-	default:
-		break;
-	}
-
-	// 何とも衝突していなかったらそのまま移動する
-	position = pos;
+	Vector2 pos = boundary->GetPosition() + speed;
+	if (gm->isCollided(*static_cast<Circle*>(boundary)))
+		printf("Ball::Update");
+	else
+		boundary->SetPosition(pos);
 }
+
+bool Ball::_isCollided(
+	const GameMath::CollisionDetector& collider, 
+	const Box& box
+)
+{
+	return collider.isCollided(*static_cast<Circle*>(boundary), box);
+}
+
+bool Ball::_isCollided(
+	const GameMath::CollisionDetector& collider, 
+	const LineSegment& lineSegment
+)
+{
+	return collider.isCollided(*static_cast<Circle*>(boundary), lineSegment);
+}
+
+bool Ball::_isCollided(const GameMath::CollisionDetector& collider, const Capsule& capsule)
+{
+	return collider.isCollided(*static_cast<Circle*>(boundary), capsule);
+}
+
 
 /// <summary>
 /// 描画
 /// </summary>
 void Ball::Draw()
 {
-	DrawGraphF(position.GetX(), position.GetY(), handle, TRUE);
+	DrawGraphF(
+		boundary->GetPosition().GetX(), 
+		boundary->GetPosition().GetY(),	
+		handle, 
+		TRUE
+	);
 }
