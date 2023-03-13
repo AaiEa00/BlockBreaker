@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameObject.h"
+#include "DxLib.h"
 
 /// <summary>
 /// プレイヤー管理クラス
@@ -18,19 +19,19 @@ public:		// コンストラクタ
 public:		// インターフェース
 	virtual void Update(GameManager* gm) = 0;	// 状態更新
 
-	virtual bool _isCollided(
+	virtual bool CheckCollision(
 		const GameMath::CollisionDetector& collider,
 		const Circle& circle
 	) = 0;
-	virtual bool _isCollided(
+	virtual bool CheckCollision(
 		const GameMath::CollisionDetector& collider,
 		const Box& box
 	) = 0;
-	virtual bool _isCollided(
+	virtual bool CheckCollision(
 		const GameMath::CollisionDetector& collider,
 		const LineSegment& lineSegment
 	) = 0;
-	virtual bool _isCollided(
+	virtual bool CheckCollision(
 		const GameMath::CollisionDetector& collider,
 		const Capsule& capsule
 	) = 0;

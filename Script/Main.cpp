@@ -1,10 +1,11 @@
-#include "DxLib.h"
 #include "Utility.h"
-#include "Shape.h"
+#include "Bar.h"
+#include "Box.h"
+#include "Capsule.h"
+#include "Circle.h"
+#include "LineSegment.h"
 #include "GameManager.h"
-#include "GameObject.h"
-#include <list>
-#include <vector>
+#include "Bar.h"
 
 #ifdef _DEBUG
 int main(int argc, char* argv[]) 
@@ -16,6 +17,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	if (argc < 2)
 		return error;
+	else
+		assert(argc >= 2);
 
 	// ウィンドウモード
 	ChangeWindowMode(TRUE);
@@ -30,33 +33,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// 裏画面に描画
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	// シーンに登録するゲームオブジェクト
-	std::list<GameObject*> scene;
-
-	GameManager* gm = new BlockBreaker;
+	GameManager* gm = new BlockBreaker(argv[1]);
 
 	while (ProcessMessage() == normal && ClearDrawScreen() == normal)
 	{
 		// 全てのゲームオブジェクトの状態を更新
-		for (auto& objs : scene)
-		{
-			objs->Update(gm);
-		}
+		gm->Update();
 
 		// 全てのゲームオブジェクトを描画
-		for (auto& objs : scene)
-		{
-			objs->Draw();
-		}
+		gm->Draw();
 
 		ScreenFlip();
 	}
 
 	// 全てのゲームオブジェクトを解放
-	for (auto& objs : scene)
-	{
-		delete objs;
-	}
+	delete gm;
 
 	DxLib_End();
 

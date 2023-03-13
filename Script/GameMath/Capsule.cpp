@@ -8,14 +8,13 @@
 /// <param name="r">”¼Œa</param>
 GameMath::Capsule::Capsule(
 	const Vector2& pos,
-	const Vector2& tp, 
-	const Vector2& bs, 
+	const Vector2& tp,
 	const float r
 ):Shape(pos)
 {
-	tip = tp;
-	base = bs;
 	radius = r;
+	tip = tp;
+	Vector2 bs{pos.GetX(), pos.GetY() + r};
 
 	Vector2 capsuleNormal = (tip - base).Normalize();
 	Vector2 lineEndOffset = capsuleNormal * radius;

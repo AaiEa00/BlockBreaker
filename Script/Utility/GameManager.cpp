@@ -1,15 +1,22 @@
 #include "GameManager.h"
 
-BlockBreaker::BlockBreaker()
+BlockBreaker::BlockBreaker(char* argv)
 {
-	for (int i = 0; i < 10; ++i)
-	{
-		scene.push_back(new Blocks);
-	}
-	_bar = new Bar;
+	//for (int i = 0; i < 10; ++i)
+	//{
+	//	scene.push_back(new Blocks);
+	//}
+	std::vector<float> barData = GetCapsuleData(*argv);
+	_bar = new Bar(
+		barData.at(0), 
+		barData.at(1), 
+		barData.at(2), 
+		barData.at(3), 
+		barData.at(4)
+	);
 	scene.push_back(_bar);
-	_ball = new Ball;
-	scene.push_back(_ball);
+	//_ball = new Ball;
+	//scene.push_back(_ball);
 }
 
 BlockBreaker::~BlockBreaker()
@@ -24,15 +31,15 @@ BlockBreaker::~BlockBreaker()
 void BlockBreaker::Update()
 {
 	_bar->Update(this);
-	_ball->Update(this);
+	//_ball->Update(this);
 }
 
-bool BlockBreaker::_isCollided(const Circle& circle)
+bool BlockBreaker::CheckCollision(const Circle& circle)
 {
 	for (GameObject* obj : scene)
 	{
-		if (((obj != _ball) && (obj != _bar))
-			&& obj->_isCollided(collider, circle))
+		if (/*((obj != _ball) &&*/ (obj != _bar)
+			&& obj->CheckCollision(collider, circle))
 		{
 			return true;
 		}
@@ -41,12 +48,12 @@ bool BlockBreaker::_isCollided(const Circle& circle)
 	return false;
 }
 
-bool BlockBreaker::_isCollided(const Box& box)
+bool BlockBreaker::CheckCollision(const Box& box)
 {
 	for (GameObject* obj : scene)
 	{
-		if (((obj != _ball) && (obj != _bar))
-			&& obj->_isCollided(collider, box))
+		if (/*((obj != _ball) &&*/ obj != _bar
+			&& obj->CheckCollision(collider, box))
 		{
 			return true;
 		}
@@ -55,12 +62,12 @@ bool BlockBreaker::_isCollided(const Box& box)
 	return false;
 }
 
-bool BlockBreaker::_isCollided(const LineSegment& lineSegment)
+bool BlockBreaker::CheckCollision(const LineSegment& lineSegment)
 {
 	for (GameObject* obj : scene)
 	{
-		if (((obj != _ball) && (obj != _bar))
-			&& obj->_isCollided(collider, lineSegment))
+		if (/*((obj != _ball) && */obj != _bar
+			&& obj->CheckCollision(collider, lineSegment))
 		{
 			return true;
 		}
@@ -69,12 +76,12 @@ bool BlockBreaker::_isCollided(const LineSegment& lineSegment)
 	return false;
 }
 
-bool BlockBreaker::_isCollided(const Capsule& capsule)
+bool BlockBreaker::CheckCollision(const Capsule& capsule)
 {
 	for (GameObject* obj : scene)
 	{
-		if (((obj != _ball) && (obj != _bar))
-			&& obj->_isCollided(collider, capsule))
+		if (/*((obj != _ball) && (*/obj != _bar
+			&& obj->CheckCollision(collider, capsule))
 		{
 			return true;
 		}

@@ -1,6 +1,6 @@
 #pragma once
 #include "DxLib.h"
-#include "GameObject.h"
+#include "Player.h"
 #include <algorithm>
 
 constexpr std::string_view blocks = "Image/GreenBlock.png";		// ブロック画像ファイルへのパス
@@ -9,7 +9,10 @@ constexpr int blocksDivisionNum = 2;						// ブロックの縦横分割数
 constexpr int blocksSizeWidth = 100;						// ブロックの横幅
 constexpr int blocksSizeHeight = 64;						// ブロックの縦幅
 
-class Blocks :public Player
+class gameManager;
+
+class Blocks 
+	:public Player
 {
 //private:
 	//int handles[blocksAllNum]{ 0, 0, 0, 0 };		// 分割した画像ハンドル	

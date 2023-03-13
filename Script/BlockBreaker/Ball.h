@@ -7,6 +7,8 @@
 constexpr std::string_view ball = "Image/Ball.png";
 constexpr int ballSize = 16;
 
+class GameManager;
+
 class Ball :public Player
 {
 private:	// ƒƒ“ƒo[•Ï”

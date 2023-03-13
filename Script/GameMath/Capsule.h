@@ -8,8 +8,8 @@ namespace GameMath
 		friend class CollisionDetector;
 
 	private:
-		Vector2 tip{ 0.0f, 0.0f };		// 線分の始点ベクトル
-		Vector2 base{ 0.0f, 0.0f };		// 線分の終点ベクトル
+		Vector2 tip{ 0.0f, 0.0f };		// カプセルの右端
+		Vector2 base{ 0.0f, 0.0f };		// カプセルの左端
 		Vector2 lineTip{ 0.0f, 0.0f };	// 線分の端tip側
 		Vector2 lineBase{ 0.0f, 0.0f };	// 線分の端base側
 		float radius{ 0.0f };			// 半径
@@ -25,7 +25,6 @@ namespace GameMath
 		Capsule(
 			const Vector2& pos,
 			const Vector2& tp,
-			const Vector2& bs,
 			const float r
 		);
 

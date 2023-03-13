@@ -1,14 +1,12 @@
 #pragma once
 #include <list>
-
-#include "Ball.h"
+//#include <string>
+//#include "Ball.h"
+//#include "Blocks.h"
 #include "Bar.h"
-#include "Blocks.h"
-#include "CollisionDetector.h"
+#include "MyStream.h"
 
 class GameObject;
-class Player;
-class Blocks;
 
 class GameManager
 {
@@ -22,10 +20,10 @@ public:
 public:
 	virtual void Update() = 0;
 
-	virtual bool _isCollided(const Circle& circle) = 0;
-	virtual bool _isCollided(const Box& box) = 0;
-	virtual bool _isCollided(const LineSegment& lineSegment) = 0;
-	virtual bool _isCollided(const Capsule& capsule) = 0;
+	virtual bool CheckCollision(const Circle& circle) = 0;
+	virtual bool CheckCollision(const Box& box) = 0;
+	virtual bool CheckCollision(const LineSegment& lineSegment) = 0;
+	virtual bool CheckCollision(const Capsule& capsule) = 0;
 
 	virtual void Draw() = 0;
 };
@@ -33,23 +31,24 @@ public:
 /// <summary>
 /// 自作ゲームマネージャー
 /// </summary>
-class BlockBreaker :public GameManager
+class BlockBreaker
+	:public GameManager
 {
 protected:
-	Ball* _ball;
+	//Ball* _ball;
 	Bar* _bar;
 
 public:
-	BlockBreaker();
+	BlockBreaker(char*);
 	~BlockBreaker();
 
 public:
 	void Update();
 
-	bool _isCollided(const Circle& circle);
-	bool _isCollided(const Box& box);
-	bool _isCollided(const LineSegment& lineSegment);
-	bool _isCollided(const Capsule& capsule);
+	bool CheckCollision(const Circle& circle);
+	bool CheckCollision(const Box& box);
+	bool CheckCollision(const LineSegment& lineSegment);
+	bool CheckCollision(const Capsule& capsule);
 
 	void Draw();
 };

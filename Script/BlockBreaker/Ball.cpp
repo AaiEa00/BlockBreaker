@@ -23,7 +23,7 @@ void Ball::Update(GameManager* gm)
 {
 	// ˆÚ“®Œã‚ÌÀ•W
 	Vector2 pos = boundary->GetPosition() + speed;
-	if (gm->isCollided(*static_cast<Circle*>(boundary)))
+	if (gm->_isCollided(*static_cast<Circle*>(boundary)))
 		printf("Ball::Update");
 	else
 		boundary->SetPosition(pos);

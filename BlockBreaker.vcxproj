@@ -161,9 +161,7 @@
     <Image Include="Image\GreenBlock.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Script\BlockBreaker\Ball.cpp" />
     <ClCompile Include="Script\BlockBreaker\Bar.cpp" />
-    <ClCompile Include="Script\BlockBreaker\Blocks.cpp" />
     <ClCompile Include="Script\BlockBreaker\GameObject.cpp" />
     <ClCompile Include="Script\BlockBreaker\Player.cpp" />
     <ClCompile Include="Script\GameMath\Capsule.cpp" />
@@ -175,11 +173,10 @@
     <ClCompile Include="Script\GameMath\Vector2.cpp" />
     <ClCompile Include="Script\Main.cpp" />
     <ClCompile Include="Script\Utility\GameManager.cpp" />
+    <ClCompile Include="Script\Utility\MyStream.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Script\BlockBreaker\Ball.h" />
     <ClInclude Include="Script\BlockBreaker\Bar.h" />
-    <ClInclude Include="Script\BlockBreaker\Blocks.h" />
     <ClInclude Include="Script\BlockBreaker\GameObject.h" />
     <ClInclude Include="Script\BlockBreaker\Player.h" />
     <ClInclude Include="Script\GameMath\Capsule.h" />
@@ -190,6 +187,7 @@
     <ClInclude Include="Script\GameMath\Shape.h" />
     <ClInclude Include="Script\GameMath\Vector2.h" />
     <ClInclude Include="Script\Utility\GameManager.h" />
+    <ClInclude Include="Script\Utility\MyStream.h" />
     <ClInclude Include="Script\Utility\Utility.h" />
   </ItemGroup>
   <ItemGroup>

@@ -3,9 +3,10 @@
 /// <summary>
 /// コンストラクタ
 /// </summary>
-Bar::Bar(const std::string_view fileName, const float& spd)
-	:Player(fileName)
+Bar::Bar(const float& spd)
+	:Player(barPass)
 {
+
 	boundary = new Capsule;
 	speed = spd;
 }
@@ -28,21 +29,25 @@ void Bar::Update(GameManager* gm)
 	if (GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_RIGHT)
 	{
 		pos = Vector2::AddX(pos, speed);
-		if (gm->_isCollided(*static_cast<Capsule*>(boundary)))
+		if (gm->CheckCollision(*static_cast<Capsule*>(boundary))) {
 			puts("右入力");
+			return;
+		}
 	}
 	// 左方向の入力
 	if (GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_LEFT)
 	{
 		pos = Vector2::AddX(pos, -speed);
-		if (gm->_isCollided(*static_cast<Capsule*>(boundary)))
+		if (gm->CheckCollision(*static_cast<Capsule*>(boundary))) {
 			puts("左入力");
+			return;
+		}
 	}
 
 	boundary->SetPosition(pos);
 }
 
-bool Bar::_isCollided(const GameMath::CollisionDetector& collider, const LineSegment& lineSegment)
+bool Bar::CheckCollision(const GameMath::CollisionDetector& collider, const LineSegment& lineSegment)
 {
 	return collider.isCollided(*static_cast<Capsule*>(boundary), lineSegment);
 }

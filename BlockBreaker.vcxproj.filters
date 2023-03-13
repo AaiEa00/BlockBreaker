@@ -50,13 +50,7 @@
     <ClCompile Include="Script\GameMath\Vector2.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
-    <ClCompile Include="Script\BlockBreaker\Ball.cpp">
-      <Filter>ソース ファイル\BlockBreaker</Filter>
-    </ClCompile>
     <ClCompile Include="Script\BlockBreaker\Bar.cpp">
-      <Filter>ソース ファイル\BlockBreaker</Filter>
-    </ClCompile>
-    <ClCompile Include="Script\BlockBreaker\Blocks.cpp">
       <Filter>ソース ファイル\BlockBreaker</Filter>
     </ClCompile>
     <ClCompile Include="Script\BlockBreaker\GameObject.cpp">
@@ -89,18 +83,15 @@
     <ClCompile Include="Script\GameMath\Shape.cpp">
       <Filter>ソース ファイル\GameMath</Filter>
     </ClCompile>
+    <ClCompile Include="Script\Utility\MyStream.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Script\GameMath\Vector2.h">
       <Filter>ヘッダー ファイル\GameMath</Filter>
     </ClInclude>
-    <ClInclude Include="Script\BlockBreaker\Ball.h">
-      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
-    </ClInclude>
     <ClInclude Include="Script\BlockBreaker\Bar.h">
-      <Filter>ヘッダー ファイル\BlockBreaker</Filter>
-    </ClInclude>
-    <ClInclude Include="Script\BlockBreaker\Blocks.h">
       <Filter>ヘッダー ファイル\BlockBreaker</Filter>
     </ClInclude>
     <ClInclude Include="Script\BlockBreaker\GameObject.h">
@@ -132,6 +123,9 @@
     </ClInclude>
     <ClInclude Include="Script\GameMath\LineSegment.h">
       <Filter>ヘッダー ファイル\GameMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\Utility\MyStream.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
